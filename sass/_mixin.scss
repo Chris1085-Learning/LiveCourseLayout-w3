@@ -1,0 +1,42 @@
+@for $i from 1 to $gridNum + 1 {
+  .col-#{$i} {
+    max-width: 100% * ($i / $gridNum);
+    flex: 0 0 (100% * ($i / $gridNum));
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 767.98px) {
+    // @for $i from 1 to $gridNum + 1 {
+    //   .col-sm-#{$i} {
+    //     max-width: 100% * ($i / $gridNum);
+    //     flex: 0 0 (100% * ($i / $gridNum));
+    //   }
+    // }
+    @content;
+  }
+}
+
+@mixin pad {
+  @media (min-width: 768px) and (max-width: 1199.98px) {
+    // @for $i from 1 to $gridNum + 1 {
+    //   .col-md-#{$i} {
+    //     max-width: 100% * ($i / $gridNum);
+    //     flex: 0 0 (100% * ($i / $gridNum));
+    //   }
+    // }
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: 1200px) {
+    // @for $i from 1 to $gridNum + 1 {
+    //   .col-xl-#{$i} {
+    //     max-width: 100% * ($i / $gridNum);
+    //     flex: 0 0 (100% * ($i / $gridNum));
+    //   }
+    // }
+    @content;
+  }
+}
