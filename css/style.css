@@ -1,37 +1,3 @@
-/*=============================================
-=            General CSS Style                =
-=============================================*/
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  width: 100%;
-  height: 100%;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 64px;
-  line-height: 75px;
-}
-
-h5 {
-  font-size: 24px;
-  line-height: 42px;
-}
-
-p {
-  font-size: 24px;
-  line-height: 36px;
-}
-
-/*=====  End of General css style  ======*/
 .col-1 {
   max-width: 8.33333%;
   -webkit-box-flex: 0;
@@ -116,6 +82,100 @@ p {
           flex: 0 0 100%;
 }
 
+/*=============================================
+=            General CSS Style                =
+=============================================*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  font-weight: 700;
+}
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 64px;
+    line-height: 96px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 48px;
+    line-height: 72px;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 700;
+  }
+  h5 {
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  h2 {
+    font-size: 48px;
+    line-height: 72px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+  h5 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 767.98px) {
+  h2 {
+    font-size: 32px;
+    line-height: 72px;
+    font-weight: 700;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 48px;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+  h5 {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+/*=====  End of General css style  ======*/
 .row {
   width: 100%;
   display: -webkit-box;
@@ -167,6 +227,14 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.text-darkRed {
+  color: #650300;
+}
+
+.text-lightRed {
+  color: #aa0601;
 }
 
 @media (min-width: 1200px) {
@@ -514,5 +582,201 @@ p {
   font-weight: normal;
   text-decoration: none;
   color: white;
+}
+
+.home-banner {
+  background-image: url("../images/banner.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  text-align: right;
+}
+
+.home-banner .banner-title {
+  color: #650300;
+}
+
+@media (min-width: 1200px) {
+  .home-banner .banner-title {
+    padding: 350px 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .home-banner .banner-title {
+    padding: 373px 0px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .home-banner .banner-title {
+    padding: 163px 0px;
+  }
+}
+
+.proInfo {
+  background-color: #aa06010d;
+}
+
+.proInfo .title {
+  color: #650300;
+}
+
+.proInfo .proInfo-list .proInfo-list-item {
+  padding: 16px 37px 24px 37px;
+}
+
+.proInfo .proInfo-list .proInfo-list-item .item-title {
+  color: #650300;
+}
+
+@media (min-width: 1200px) {
+  .proInfo {
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+  .proInfo .title {
+    margin-bottom: 44px;
+  }
+  .proInfo .item-img {
+    height: 100px;
+    width: 100px;
+    margin: 16px 91px 40px 91px;
+  }
+  .proInfo .item-title {
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .proInfo {
+    padding-top: 40px;
+    padding-bottom: 36px;
+  }
+  .proInfo .proInfo-list-item .item-img {
+    height: 100px;
+    width: 100px;
+    margin: 20px 122px 16px 122px;
+  }
+  .proInfo .proInfo-list-item .item-title {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .proInfo {
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+  .proInfo .title {
+    margin-bottom: 32px;
+  }
+  .proInfo .item-img {
+    height: 100px;
+    width: 100px;
+    margin: 20px 136px 16px 136px;
+  }
+  .proInfo .item-title {
+    margin-bottom: 8px;
+  }
+}
+
+.classical .list-img {
+  height: 100%;
+}
+
+.classical .list-item:nth-child(2) .list-img:hover {
+  content: url("../images/product-2-color.png");
+}
+
+@media (min-width: 1200px) {
+  .classical {
+    padding-top: 64px;
+    padding-bottom: 48px;
+  }
+  .classical .title {
+    margin-bottom: 60px;
+  }
+  .classical .list-item {
+    margin-bottom: 32px;
+  }
+  .classical .list-item .list-title-container {
+    padding-left: 24px;
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .classical .list-item .list-title-container .list-title {
+    padding-left: 8px;
+  }
+  .classical .list-item:nth-child(2) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .classical {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
+  .classical .container {
+    width: 100%;
+    padding-left: 48px;
+  }
+  .classical .title {
+    margin-bottom: 32px;
+  }
+  .classical .list-item {
+    margin-bottom: 8px;
+  }
+  .classical .list-item .list-title-container {
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .classical .list-item .list-title-container .list-title {
+    padding-left: 8px;
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .classical {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+  .classical .title {
+    margin-bottom: 16px;
+  }
+  .classical .list-item {
+    margin-bottom: 8px;
+  }
+  .classical .list-item .list-title-container {
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: -50%;
+    left: 50%;
+  }
+  .classical .list-item .list-title-container .list-title {
+    padding-left: 8px;
+    font-size: 28px;
+    line-height: 42px;
+  }
+}
+
+.list-title {
+  padding-left: 8px;
 }
 /*# sourceMappingURL=style.css.map */
