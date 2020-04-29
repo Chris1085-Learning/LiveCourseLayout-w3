@@ -263,13 +263,14 @@
 }
 
 .classical {
-  .list-img {
-    height: 100%;
-  }
   .list-item:nth-child(2) .list-img:hover {
     content: url("../images/product-2-color.png");
-    // height: 100%;
-    // width: 100%;
+  }
+
+  .list-title-container {
+    font-style: italic;
+    font-weight: 700;
+    text-transform: uppercase;
   }
 
   @include pc {
@@ -285,9 +286,6 @@
 
       .list-title-container {
         padding-left: 24px;
-        font-style: italic;
-        font-weight: 700;
-        text-transform: uppercase;
 
         .list-title {
           padding-left: 8px;
@@ -316,9 +314,6 @@
       margin-bottom: 8px;
 
       .list-title-container {
-        font-style: italic;
-        font-weight: 700;
-        text-transform: uppercase;
         justify-content: center;
 
         .list-title {
@@ -340,28 +335,35 @@
 
     .list-item {
       margin-bottom: 8px;
-
-      .list-img {
-        // position: relative;
-      }
+      position: relative;
+      // border: 1px solid red;
 
       .list-title-container {
-        // position: absoulte;
-        // position: relative;
-
-        font-style: italic;
-        font-weight: 700;
-        text-transform: uppercase;
+        position: absolute;
         justify-content: center;
-        top: -50%;
+        top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
 
         .list-title {
+          color: white;
           padding-left: 8px;
           font-size: 28px;
           line-height: 42px;
         }
       }
+    }
+
+    .list-item:nth-child(1) .list-title-img {
+      content: url("../images/icon-diamond-white.svg");
+    }
+
+    .list-item:nth-child(2) .list-title-img {
+      content: url("../images/icon-sun-white.svg");
+    }
+
+    .list-item:nth-child(3) .list-title-img {
+      content: url("../images/icon-thunder-white.svg");
     }
   }
 }
