@@ -542,7 +542,10 @@ p {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
   }
   .header .logo {
     width: 48px;
@@ -868,19 +871,19 @@ p {
   max-width: 100%;
 }
 
-.brandProduct {
+.brand .brandProduct {
   max-width: 48.75%;
   position: relative;
   height: auto;
   margin-bottom: 20px;
 }
 
-.brandProduct .brandProduct-img {
+.brand .brandProduct .brandProduct-img {
   max-width: 100%;
   height: auto;
 }
 
-.brandProduct::after {
+.brand .brandProduct::after {
   position: absolute;
   content: "";
   top: 0;
@@ -891,12 +894,10 @@ p {
   opacity: 0.5;
 }
 
-.brandProduct:nth-child(1)::before {
+.brand .brandProduct::before {
   position: absolute;
-  content: "Double A+";
+  content: "";
   color: #aa0601;
-  line-height: 108px;
-  font-size: 72px;
   width: 100%;
   text-align: center;
   top: 50%;
@@ -906,18 +907,51 @@ p {
   z-index: 2;
 }
 
-.brandProduct:nth-child(2)::before {
-  position: absolute;
+.brand .brandProduct:nth-child(1)::before {
+  content: "Double A+";
+}
+
+.brand .brandProduct:nth-child(2)::before {
   content: "YOUTH";
-  color: #aa0601;
-  line-height: 108px;
-  font-size: 72px;
-  width: 100%;
-  text-align: center;
-  top: 50%;
+}
+
+@media (min-width: 1200px) {
+  .brand .brandProduct::before {
+    line-height: 108px;
+    font-size: 72px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .brand .brandProduct::before {
+    line-height: 25px;
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .brand .brandProduct {
+    max-width: 100%;
+  }
+  .brand .brandProduct::before {
+    line-height: 25px;
+    font-size: 32px;
+  }
+}
+
+.customer {
+  position: relative;
+}
+
+.customer .container {
+  position: absolute;
+  top: -373px;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  z-index: 2;
+}
+
+.customer .container .title {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
