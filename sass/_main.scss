@@ -15,6 +15,7 @@
     .col-xl-#{$i} {
       max-width: 100% * ($i / $gridNum);
       flex: 0 0 (100% * ($i / $gridNum));
+      max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters * 3});
     }
   }
 }
@@ -28,6 +29,7 @@
     .col-md-#{$i} {
       max-width: 100% * ($i / $gridNum);
       flex: 0 0 (100% * ($i / $gridNum));
+      max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters * 3});
     }
   }
 }
@@ -40,6 +42,7 @@
     .col-sm-#{$i} {
       max-width: 100% * ($i / $gridNum);
       flex: 0 0 (100% * ($i / $gridNum));
+      // max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters});
     }
   }
 }
@@ -113,12 +116,9 @@
     }
 
     .menuBtn {
-      // width: 24px;
-      // height: 24px;
       position: absolute;
       top: 15px;
       left: 16px;
-      // cursor: pointer;
       z-index: 1;
 
       input {
@@ -128,7 +128,6 @@
         position: absolute;
         cursor: pointer;
         z-index: 2;
-        // display: block;
       }
 
       .menuBar {
@@ -140,11 +139,6 @@
         background: white;
         border-radius: 3px;
         z-index: 1;
-
-        // transform-origin: 4px 0px;
-
-        // transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        //   opacity 0.55s ease;
       }
     }
   }
@@ -391,6 +385,13 @@
     margin-bottom: 60px;
     color: white;
   }
+
+  @include pad {
+    padding-bottom: 417px;
+  }
+  @include mobile {
+    padding-bottom: 189px;
+  }
 }
 
 .designGroup {
@@ -451,17 +452,6 @@
     }
   }
 
-  // .moreInfo::before {
-  //   position: absolute;
-  //   // display: block;
-  //   content: "";
-  //   top: -31px;
-  //   left: -5px;
-  //   width: 259px;
-  //   height: 167px;
-  //   background-color: rgb(249, 202, 0);
-  //   z-index: -10;
-  // }
   @include pad {
     width: 672px;
     .designGroup-brb {
@@ -482,18 +472,48 @@
         height: 80%;
         top: 50%;
         left: 50%;
-        font-size: 40px;
+        font-size: 30px;
         line-height: 30px;
+        transform: translate(-30%, -50%);
+        background-color: #fff;
+        // padding-right: 19px;
+        text-decoration: none;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  @include mobile {
+    width: 90%;
+
+    // width: 352px;
+
+    .designGroup-brb {
+      height: 35%;
+      position: relative;
+
+      .moreInfo {
+        position: absolute;
+
+        width: 34.6%;
+        height: 100%;
+        transform: translateX(165%);
+        background-color: rgb(249, 202, 0);
+      }
+      .moreInfo-title {
+        position: absolute;
+        width: 112%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        font-size: 20px;
+        line-height: 26px;
         transform: translate(-30%, -50%);
         background-color: #fff;
         // padding-right: 19px;
         text-decoration: none;
       }
     }
-  }
-
-  @include mobile {
-    width: 352px;
   }
 }
 
@@ -558,6 +578,8 @@
   }
 
   @include mobile {
+    width: 90%;
+
     .brandProduct {
       max-width: 100%;
       &::before {
@@ -569,15 +591,73 @@
 }
 
 .customer {
-  position: relative;
+  margin-top: -340px;
+
+  @include pad {
+    margin-top: -380px;
+  }
+  @include mobile {
+    margin-top: -168px;
+  }
+
   .container {
-    position: absolute;
-    top: -373px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-bottom: 16px;
 
     .title {
       color: white;
+      margin-bottom: 60px;
+    }
+
+    .listCard {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .listCard-content {
+        border: 1px solid #dee2e6;
+        padding: 16px;
+        background-color: #fff;
+
+        .listCard-name {
+          font-weight: bold;
+          line-height: 21px;
+        }
+
+        .listCard-name,
+        .listCard-text {
+          margin-bottom: 16px;
+        }
+
+        .listCard-updateTime {
+          color: #707070;
+          line-height: 21px;
+        }
+      }
+    }
+
+    @include pad {
+      .title {
+        font-size: 32px;
+        line-height: 48px;
+        margin-bottom: 32px;
+      }
+
+      .listCard {
+        margin-bottom: 24px;
+      }
+    }
+
+    @include mobile {
+      width: 90%;
+      .title {
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 16px;
+      }
+      .listCard {
+        margin-bottom: 16px;
+      }
     }
   }
 }

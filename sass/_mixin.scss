@@ -1,6 +1,6 @@
 @for $i from 1 to $gridNum + 1 {
   .col-#{$i} {
-    max-width: 100% * ($i / $gridNum);
+    max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters * 3});
     flex: 0 0 (100% * ($i / $gridNum));
   }
 }
