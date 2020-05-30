@@ -25,7 +25,7 @@
       </ul>
     </header>
     <section class="home-banner row">
-      <div class="container flex-column jusitify-content-center">
+      <div class="container flex-column justify-content-center">
         <div class="banner-title">
           <h5 class="sub-title">Promise-Desert 2020 早春系列</h5>
           <h2 class="title">看得清，才能看得遠</h2>
@@ -104,7 +104,10 @@
               <img src="./images/product-7.png" alt="" />
               <div class="d-flex designGroup-brb">
                 <div class="moreInfo">
-                  <a href="" class="moreInfo-title text-lightRed text-center">MORE</a>
+                  <div class="moreInfo-title d-flex align-items-center">
+                    <a href="" class="text-lightRed text-center">MORE</a>
+                    <img class="" src="./images/icon-arrow.svg" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,7 +124,7 @@
       </div>
     </section>
     <section class="customer">
-      <div class="container jusitify-content-center">
+      <div class="container justify-content-center">
         <h3 class="title text-center">顧客推薦</h3>
         <ul class="customerList row flex-wrap justify-content-between">
           <li class="listCard col-3 col-md-6 col-sm-12">
@@ -176,37 +179,95 @@
       </div>
     </section>
     <section class="contact">
-      <h3 class="title">聯絡我們</h3>
+      <h3 class="title text-center">聯絡我們</h3>
       <div class="container">
         <div class="col-8 col-sm-12 flex-wrap justify-content-center"></div>
         <p class="contact-info">
           我們相當重視您的意見，若您有任何疑問，可先參考「常見問題」，若仍有任何問題，請填妥以下資料，我們會在近期與您聯繫。
         </p>
         <form action="" class="form">
-          <div class="form-gorup"><label for="name">姓名</label><input type="text" placeholder="陳小明" /></div>
-          <div class="form-gorup">
-            <label for="phone">聯絡電話</label><input type="tel"" placeholder="0912-345-678"/>
+          <div class="form-group flex-column">
+            <label class="form-group-title" for="name">姓名</label
+            ><input class="form-group-singleContent" type="text" placeholder="陳小明" />
           </div>
-          <div class="form-gorup">
-            <label for="email">電子郵件</label><input type="email" placeholder="example@email.com" />
+          <div class="form-group flex-column">
+            <label class="form-group-title" for="phone">聯絡電話</label><input class="form-group-singleContent"
+            type="tel"" placeholder="0912-345-678"/>
           </div>
-          <div class="form-gorup">
-            <label for="feedback">意見反應</label
-            ><textarea name="" id="" cols="30" rows="10" placeholder="請輸入您的意見"></textarea>
+          <div class="form-group flex-column">
+            <label class="form-group-title" for="email">電子郵件</label
+            ><input class="form-group-singleContent" type="email" placeholder="example@email.com" />
           </div>
-          <div class="form-gorup">
+          <div class="form-group flex-column">
+            <label class="form-group-title" for="feedback">意見反應</label
+            ><textarea
+              class="form-group-multiContent"
+              name=""
+              id=""
+              cols="30"
+              rows="8"
+              placeholder="請輸入您的意見"
+            ></textarea>
+          </div>
+          <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" />
-                我同意隱私權政策，並同意依隱私權政策中所述的方式處理自己的資料。
+                <input type="checkbox" class="form-check-input" name="" id="" />
+                <span class="form-check-content">我同意隱私權政策，並同意依隱私權政策中所述的方式處理自己的資料。</span>
               </label>
             </div>
           </div>
-          <div>
-            <button>確認送出</button>
+          <div class="form-btn text-center">
+            <button class="btn" type="submit">確認送出</button>
           </div>
         </form>
       </div>
     </section>
+    <footer class="footer text-white">
+      <div class="container">
+        <div class="row d-flex justify-content-between footer-Content">
+          <div class="footerMenu">
+            <ul class="footerMenu-list d-flex">
+              <li class="footerMenu-list-item"><a class="footerLink" href="#">首頁</a></li>
+              <li class="footerMenu-list-item"><a class="footerLink" href="#">系列鏡框</a></li>
+              <li class="footerMenu-list-item"><a class="footerLink" href="#">門市據點</a></li>
+              <li class="footerMenu-list-item"><a class="footerLink" href="#">部落格</a></li>
+              <li class="footerMenu-list-item"><a class="footerLink" href="#">常見問題</a></li>
+            </ul>
+            <ul class="footer-contact">
+              <li class="footer-contactList d-flex align-items-center">
+                <img class="footer-contactImg" src="./images/icon-phone.svg" alt="" class="listImg" />
+                <span class="listText">0800-000-000</span>
+              </li>
+              <li class="footer-contactList d-flex align-items-center">
+                <img class="footer-contactImg" src="./images/icon-mail.svg" alt="" class="listImg" />
+                <span class="listText">glasses@business.com</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="social d-flex">
+              <li class="social-icons">
+                <img class="social-iconsImg" src="./images/icon-fb.svg" alt="" class="listImg" />
+              </li>
+              <li class="social-icons">
+                <img class="social-iconsImg" src="./images/icon-ig.svg" alt="" class="listImg" />
+              </li>
+              <li class="social-icons">
+                <img class="social-iconsImg" src="./images/icon-line.svg" alt="" class="listImg" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row provision justify-content-between">
+          <img class="provision-logo" src="./images/logo.png" alt="" class="listImg" />
+          <span class="copyright">Copyright © 2020 Glasses.All rights reserved.</span>
+          <ul class="provision-list d-flex">
+            <li class="provision-list-item"><a class="footerLink" href="#">隱私權政策</a></li>
+            <li class="provision-list-item"><a class="footerLink" href="#">服務條款</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

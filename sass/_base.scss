@@ -1,6 +1,6 @@
-/*=============================================
-=            General CSS Style                =
-=============================================*/
+/*===================
+=     Utilities     =
+====================*/
 
 *,
 *::before,
@@ -14,10 +14,6 @@ body {
   font-size: 16px;
   width: 100%;
   height: 100%;
-  // line-height: 1.5;
-  // font-weight: 300;
-  // color: #333;
-  // font-style: italic;
   font-weight: 700;
 }
 @include pc {
@@ -104,11 +100,65 @@ p {
   font-weight: normal;
 }
 
-// span {
-//   font-size: 20px;
-//   line-height: 42px;
-//   // padding-left: 16px;
-//   font-weight: bold;
-// }
+.text-center {
+  text-align: center;
+}
 
-/*=====  End of General css style  ======*/
+.text-darkRed {
+  color: $text-dark-red;
+}
+
+.text-lightRed {
+  color: $text-light-red;
+}
+
+.text-white {
+  color: $text-white;
+}
+
+@include pc {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  @for $i from 1 to $gridNum + 1 {
+    .col-xl-#{$i} {
+      max-width: 100% * ($i / $gridNum);
+      flex: 0 0 (100% * ($i / $gridNum));
+      max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters * 3});
+    }
+  }
+}
+
+@include pad {
+  .container {
+    width: 672px;
+    margin: 0 auto;
+  }
+  @for $i from 1 to $gridNum + 1 {
+    .col-md-#{$i} {
+      max-width: 100% * ($i / $gridNum);
+      flex: 0 0 (100% * ($i / $gridNum));
+      max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters * 3});
+    }
+  }
+}
+@include mobile {
+  .container {
+    width: 352px;
+    margin: 0 auto;
+  }
+  @for $i from 1 to $gridNum + 1 {
+    .col-sm-#{$i} {
+      max-width: 100% * ($i / $gridNum);
+      flex: 0 0 (100% * ($i / $gridNum));
+      // max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters});
+    }
+  }
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  flex-wrap: wrap;
+}

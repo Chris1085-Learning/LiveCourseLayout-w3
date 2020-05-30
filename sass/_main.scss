@@ -1,164 +1,10 @@
-.text-darkRed {
-  color: $text-dark-red;
-}
+// .test {
+//   border: 1px solid green;
+// }
 
-.text-lightRed {
-  color: $text-light-red;
-}
-
-@include pc {
-  .container {
-    width: 1200px;
-    margin: 0 auto;
-  }
-  @for $i from 1 to $gridNum + 1 {
-    .col-xl-#{$i} {
-      max-width: 100% * ($i / $gridNum);
-      flex: 0 0 (100% * ($i / $gridNum));
-      max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters * 3});
-    }
-  }
-}
-
-@include pad {
-  .container {
-    width: 672px;
-    margin: 0 auto;
-  }
-  @for $i from 1 to $gridNum + 1 {
-    .col-md-#{$i} {
-      max-width: 100% * ($i / $gridNum);
-      flex: 0 0 (100% * ($i / $gridNum));
-      max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters * 3});
-    }
-  }
-}
-@include mobile {
-  .container {
-    width: 352px;
-    margin: 0 auto;
-  }
-  @for $i from 1 to $gridNum + 1 {
-    .col-sm-#{$i} {
-      max-width: 100% * ($i / $gridNum);
-      flex: 0 0 (100% * ($i / $gridNum));
-      // max-width: calc(#{100% * ($i / $gridNum)} - #{$gutters});
-    }
-  }
-}
-
-.test {
-  border: 1px solid green;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  flex-wrap: wrap;
-}
-
-.header {
-  background-color: $bg-red;
-  justify-content: space-between;
-
-  .logo {
-    background-image: url("../images/logo.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    width: 80px;
-    height: 49px;
-    text-indent: 101%;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  @include pc {
-    padding-left: 88px;
-    padding-right: 88px;
-
-    .menuBtn {
-      display: none;
-    }
-  }
-
-  @include pad {
-    padding-left: 48px;
-    padding-right: 48px;
-
-    .menuBtn {
-      display: none;
-    }
-  }
-  @include mobile {
-    padding-left: 16px;
-    padding-right: 16px;
-    text-align: center;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 3;
-
-    .logo {
-      width: 48px;
-      height: 30px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .menu {
-      display: none;
-    }
-
-    .menuBtn {
-      position: absolute;
-      top: 15px;
-      left: 16px;
-      z-index: 1;
-
-      input {
-        width: 24px;
-        height: 24px;
-        opacity: 0;
-        position: absolute;
-        cursor: pointer;
-        z-index: 2;
-      }
-
-      .menuBar {
-        display: block;
-        width: 24px;
-        height: 3px;
-        margin-bottom: 5px;
-        position: relative;
-        background: white;
-        border-radius: 3px;
-        z-index: 1;
-      }
-    }
-  }
-}
-
-.menu {
-  padding-top: 40px;
-  padding-bottom: 40px;
-
-  .menu-item {
-    a {
-      font-size: 20px;
-      line-height: 30px;
-      padding-left: 64px;
-      font-weight: normal;
-      text-decoration: none;
-      color: white;
-    }
-  }
-}
+/*=====================================
+=            首頁封面 block            =
+=======================================*/
 
 .home-banner {
   background-image: url("../images/banner.png");
@@ -224,10 +70,6 @@
     padding-top: 40px;
     padding-bottom: 36px;
 
-    // .title {
-    //   margin-bottom: 12px;
-    // }
-
     .proInfo-list-item {
       // margin: 12px;
       .item-img {
@@ -261,6 +103,10 @@
     }
   }
 }
+
+/*=====================================
+=            經典系列鏡框 block         =
+=======================================*/
 
 .classical {
   .list-item:nth-child(2) .list-img:hover {
@@ -372,6 +218,9 @@
   }
 }
 
+/*=====================================
+=            聯名設計鏡框 block         =
+=======================================*/
 .design {
   padding-top: 64px;
   padding-bottom: 460px;
@@ -379,11 +228,16 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  // height: auto;
 
   .title {
     margin-bottom: 60px;
     color: white;
+    @include pad {
+      margin-bottom: 32px;
+    }
+    @include mobile {
+      margin-bottom: 16px;
+    }
   }
 
   @include pad {
@@ -401,15 +255,18 @@
   margin: 0 auto;
   margin-bottom: 60px;
 
+  /* 拼圖最左邊 */
   .designGroup-l {
     width: 37.1%;
     margin-right: 8px;
   }
 
+  /* 拼圖右邊下方大區塊 */
   .designGroup-b {
     margin-top: 8px;
   }
 
+  /* 拼圖右邊下方左邊小區塊 */
   .designGroup-bl {
     width: 13.7%;
     margin-right: 8px;
@@ -419,15 +276,11 @@
     max-width: 100%;
   }
 
+  /* 拼圖右邊下方右邊more區塊 */
   .designGroup-brb {
     margin-top: 8px;
     height: 43%;
     position: relative;
-
-    // padding-top: 31px;
-
-    // padding-bottom: 31px;
-    // height: auto
 
     .moreInfo {
       position: absolute;
@@ -440,15 +293,23 @@
     .moreInfo-title {
       position: absolute;
       width: 100%;
-      // height: 100%;
       top: 50%;
       left: 50%;
       transform: translate(-30%, -50%);
       font-size: 72px;
       line-height: 108px;
       background-color: #fff;
-      // padding-right: 60px;
       text-decoration: none;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        margin-right: 17px;
+      }
+
+      img {
+        width: auto;
+      }
     }
   }
 
@@ -479,14 +340,20 @@
         // padding-right: 19px;
         text-decoration: none;
         vertical-align: middle;
+
+        a {
+          margin-right: 10px;
+        }
+        img {
+          width: 20%;
+        }
       }
     }
   }
 
   @include mobile {
     width: 90%;
-
-    // width: 352px;
+    margin-bottom: 20px;
 
     .designGroup-brb {
       height: 35%;
@@ -495,9 +362,9 @@
       .moreInfo {
         position: absolute;
 
-        width: 34.6%;
+        width: 45%;
         height: 100%;
-        transform: translateX(165%);
+        transform: translateX(0%);
         background-color: rgb(249, 202, 0);
       }
       .moreInfo-title {
@@ -508,15 +375,22 @@
         left: 50%;
         font-size: 20px;
         line-height: 26px;
-        transform: translate(-30%, -50%);
+        transform: translate(-40%, -50%);
         background-color: #fff;
-        // padding-right: 19px;
-        text-decoration: none;
+        a {
+          margin-right: 8px;
+        }
+        img {
+          width: 20%;
+        }
       }
     }
   }
 }
 
+/*=====================================
+=   Double A+ and YOUTH block         =
+=======================================*/
 .brand {
   max-width: 100%;
 
@@ -590,6 +464,9 @@
   }
 }
 
+/*=====================================
+=               顧客推薦 block         =
+=======================================*/
 .customer {
   margin-top: -340px;
 
@@ -659,5 +536,143 @@
         margin-bottom: 16px;
       }
     }
+  }
+}
+
+/*=====================================
+=               聯絡我們 block         =
+=======================================*/
+.contact {
+  background-color: #aa06010d;
+  .title {
+    padding-top: 64px;
+    padding-bottom: 24px;
+
+    @include pad {
+      padding-top: 40px;
+      padding-bottom: 16px;
+    }
+
+    @include mobile {
+      padding-top: 24px;
+      padding-bottom: 8px;
+    }
+  }
+
+  .container {
+    width: 41.25%;
+    @include pad {
+      width: 64.58%;
+    }
+
+    @include mobile {
+      width: 87.2%;
+    }
+  }
+
+  .contact-info {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    @include pad {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 16px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+/*=====================================
+=           聯絡我們-表單 block         =
+=======================================*/
+.form {
+  .form-group {
+    margin-bottom: 16px;
+    @include pad {
+      margin-bottom: 12px;
+    }
+
+    @include mobile {
+      margin-bottom: 12px;
+    }
+
+    .form-group-title {
+      margin-bottom: 4px;
+      @include pad {
+        margin-bottom: 2px;
+      }
+
+      @include mobile {
+        margin-bottom: 2px;
+      }
+    }
+
+    .form-group-singleContent {
+      height: 50px;
+      padding-left: 16px;
+      border: 1px solid black;
+
+      @include mobile {
+        height: 36px;
+        padding-left: 12px;
+      }
+    }
+
+    .form-group-multiContent {
+      padding-left: 16px;
+      padding-top: 14px;
+      border: 1px solid black;
+      resize: none;
+
+      @include mobile {
+        padding-left: 12px;
+        padding-top: 7px;
+      }
+    }
+
+    .form-check-content {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    input[type="checkbox"] {
+      outline: 1px solid black;
+      border: 1px solid black;
+    }
+  }
+
+  .form-btn {
+    padding-top: 26px;
+    padding-bottom: 92px;
+  }
+}
+
+.btn {
+  width: 180px;
+  height: 54px;
+  background-color: #aa0601;
+  color: white;
+  border: none;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:hover {
+    background-color: #690400;
+  }
+
+  @include pad {
+    width: 136px;
+    height: 36px;
+  }
+
+  @include mobile {
+    width: 136px;
+    height: 36px;
   }
 }
